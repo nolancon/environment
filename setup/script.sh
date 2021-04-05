@@ -2,19 +2,22 @@
 
 . ~/go-dev-env.conf
 
+# yum dependencies
 yum_deps()
 {
   yum update -y
-  yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils 	
+  yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils curl	
   yum config-manager -y --set-enabled powertools
 }
 
+# add git user and email configuration
 git_config()
 {
   git config --global user.name "$git_user"
   git config --global user.email "$git_email" 
 }  
 
+# setup go environment and install binaries
 go_setup()
 {
   gover=$go_version	 
@@ -30,6 +33,7 @@ go_setup()
   fi
 }
 
+# update vim to version compatible with vundle and vim-go
 vim_update()
 {
   vimversion="v$vim_version"	
@@ -47,6 +51,8 @@ vim_update()
   cd ~
 }
 
+# add vim-go plugin via vundle
+# add vimrc file from repo
 go_vim()
 {
   rm -rf ~/.vim/bundle/Vundle.vim
@@ -56,6 +62,7 @@ go_vim()
   vi +PluginUpdate +PluginInstall +qall
 }
 
+# add bashrc file located in repo
 bashrc_update()
 {
   wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/bashrc -O ~/bashrc
@@ -63,9 +70,18 @@ bashrc_update()
   source ~/.bashrc
 }
 
+# install docker cli only - to be connected to host docker daemon
+docker_install()
+{	
+  curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz
+  tar xzvf docker-${docker_version}.tgz --strip 1 -C /usr/local/bin docker/docker
+  rm docker-${docker_version}.tgz  
+}
+
 yum_deps
 git_config
 go_setup
 vim_update
 go_vim
+docker_install
 bashrc_update
