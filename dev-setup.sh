@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ./go-dev-env.conf
+
 yum_deps()
 {
   yum update -y
@@ -9,14 +11,15 @@ yum_deps()
 
 git_config()
 {
-  git config --global user.name "nolancon"
-  git config --global user.email conor.nolan@intel.com
+  git config --global user.name "$git_user"
+  git config --global user.email "$git_email" 
 }  
 
 go_setup()
-{	
-  wget -c https://golang.org/dl/go1.15.2.linux-amd64.tar.gz
-  tar -C /usr/local -xvzf go1.15.2.linux-amd64.tar.gz
+{
+  gover=$go_version	 
+  wget -c https://golang.org/dl/go${gover}.linux-amd64.tar.gz
+  tar -C /usr/local -xvzf go${gover}.linux-amd64.tar.gz
   mkdir -p /root/go_projects/{bin,src,pkg}
   export PATH="$PATH:/usr/local/go/bin"
   export GOPATH="/root/go_projects"
@@ -29,10 +32,11 @@ go_setup()
 
 vim_update()
 {
+  vimversion="v$vim_version"	
   cd $GOPATH/src
   mkdir -p github.com/vim
   cd github.com/vim
-  git clone --branch v8.1.2269 https://github.com/vim/vim.git
+  git clone --branch ${vimversion} https://github.com/vim/vim.git
   yum-builddep -y vim 
   cd vim
   ./configure
