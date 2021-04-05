@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./go-dev-env.conf
+. ~/go-dev-env.conf
 
 yum_deps()
 {
