@@ -6,7 +6,7 @@
 yum_deps()
 {
   yum update -y
-  yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils curl	
+  yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils curl	kubectl-$kubectl_version
   yum config-manager -y --set-enabled powertools
 }
 
@@ -27,10 +27,6 @@ go_setup()
   export PATH="$PATH:/usr/local/go/bin"
   export GOPATH="/root/go_projects"
   export GOBIN="/root/go_projects/bin"
-  go version
-  if [ $? eq 0 ]; then
-     echo "failed to setup go"
-  fi
 }
 
 # update vim to version compatible with vundle and vim-go
@@ -78,10 +74,18 @@ docker_install()
   rm docker-${docker_version}.tgz  
 }
 
+kubectl_install()
+{
+  curl -LO https://storage.googleapis.com/kubernetes-release/release/v$kubectl_version/bin/linux/amd64/kubectl
+  chmod +x ./kubectl
+  mv ./kubectl /usr/local/bin/kubectl
+}
+
 yum_deps
 git_config
 go_setup
 vim_update
 go_vim
 docker_install
+kubectl_install
 bashrc_update
