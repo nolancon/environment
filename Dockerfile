@@ -1,4 +1,4 @@
 FROM centos
 
 COPY setup /root/
-RUN /root/dev-setup.sh
+RUN /root/script.sh
