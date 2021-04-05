@@ -4,7 +4,7 @@ yum_deps()
 {
   yum update -y
   yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils 	
-  yum config-manager  --set-enabled PowerTools
+  yum config-manager -y --set-enabled powertools
 }
 
 git_config()
@@ -33,7 +33,7 @@ vim_update()
   mkdir -p github.com/vim
   cd github.com/vim
   git clone --branch v8.1.2269 https://github.com/vim/vim.git
-  yum-builddep vim 
+  yum-builddep -y vim 
   cd vim
   ./configure
   make
@@ -54,7 +54,8 @@ go_vim()
 
 bashrc_update()
 {
-  wget -c https://raw.githubusercontent.com/nolancon/environment/master/bashrc -O ~/.bashrc
+  wget -c https://raw.githubusercontent.com/nolancon/environment/master/bashrc -O ~/bashrc
+  yes | mv ~/bashrc ~/.bashrc
   source ~/.bashrc
 }
 
