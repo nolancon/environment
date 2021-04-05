@@ -1,16 +1,16 @@
 # go-dev-env
-Go development environment:
+Go development environment in Centos container:
 * Setup Go
 * Install + configure Git
 * Update Vim version
 * Enable `vim-go` plugin for Vim
+* Install Docker CLI
 * Update `.bashrc`
 
-## Run as Container
-Centos 8 base image with Git, Go and Vim-Go configured.
-* Edit `setup/go-dev-env.conf` with desired parameters
-* `docker build -t <container-name:tag> .`
+**Note:** Docker CLI is installed and connects to host Docker daemon. Therefore containers created from within go-dev-env container become sibling containers and not child containers.
 
-## Run standalone script on BM or VM
+## Setup
 * Edit `setup/go-dev-env.conf` with desired parameters
-* `source setup/script.sh`
+* Build image: `make image`
+* Deploy container: `make deploy`
+* Build + Deploy: `make all`
