@@ -12,4 +12,5 @@ Centos 8 base image with Git, Go and Vim-Go configured.
 * `docker build -t <container-name:tag> .`
 
 ## Run standalone script on BM or VM
+* Edit `setup/go-dev-env.conf` with desired parameters
 * `source setup/script.sh`
