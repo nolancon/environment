@@ -6,7 +6,7 @@
 yum_deps()
 {
   yum update -y
-  yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils curl	kubectl-$kubectl_version
+  yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils curl
   yum config-manager -y --set-enabled powertools
 }
 
