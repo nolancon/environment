@@ -81,6 +81,20 @@ kubectl_install()
   mv ./kubectl /usr/local/bin/kubectl
 }
 
+osdk_install()
+{
+  osdk_version="v$operator_sdk_version"	
+  cd $GOPATH/src/github.com
+  mkdir operator-framework
+  cd operator-framework
+  git clone https://github.com/operator-framework/operator-sdk
+  cd operator-sdk
+  git checkout ${osdk_version}
+  make install
+  mv $GOPATH/bin/operator-sdk /usr/local/bin/operator-sdk
+  cd ~
+}
+
 yum_deps
 git_config
 go_setup
@@ -88,4 +102,5 @@ vim_update
 go_vim
 docker_install
 kubectl_install
+osdk_install
 bashrc_update
