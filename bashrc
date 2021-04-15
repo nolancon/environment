@@ -122,5 +122,5 @@ export GOPATH="$HOME/go_projects"
 export GOBIN="$GOPATH/bin"
 
 # alias extras
-alias k='sudo kubectl'
+alias k='kubectl'
 alias gh='cd $GOPATH/src/github.com'
