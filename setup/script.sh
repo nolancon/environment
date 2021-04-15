@@ -54,14 +54,14 @@ go_vim()
   rm -rf ~/.vim/bundle/Vundle.vim
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   rm -rf ~/.vimrc
-  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/vimrc -O ~/.vimrc
+  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/vimrc -O ~/.vimrc
   vi +PluginUpdate +PluginInstall +qall
 }
 
 # add bashrc file located in repo
 bashrc_update()
 {
-  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/bashrc -O ~/bashrc
+  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/bashrc -O ~/bashrc
   yes | mv ~/bashrc ~/.bashrc
   source ~/.bashrc
 }

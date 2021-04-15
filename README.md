@@ -1,3 +1,6 @@
+![build](https://github.com/nolancon/go-dev-env/actions/workflows/docker.yml/badge.svg)
+![build](https://github.com/nolancon/go-dev-env/actions/workflows/static-analysis.yml/badge.svg)
+
 # go-dev-env
 Go development environment in a `centos/tools` container:
 * Setup Go
@@ -14,7 +17,9 @@ Go development environment in a `centos/tools` container:
 * Kubectl is installed and the `~/.kube` directory is mounted from the host to the `go-dev-env` container.
 
 ## Setup
-* Edit `setup/go-dev-env.conf` with desired parameters
+* Edit `setup/go-dev-env.conf` with desired parameters. 
+
+  **IMPORTANT**: Set correct git credentials
 * Build image: `make image`
 * Deploy container: `make deploy`
 * Build + Deploy: `make all`
