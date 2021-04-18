@@ -14,7 +14,8 @@ yum_deps()
 git_config()
 {
   git config --global user.name "$git_user"
-  git config --global user.email "$git_email" 
+  git config --global user.email "$git_email"
+  echo "Git configured with username: $git_user and email: $git_email" 
 }  
 
 # setup go environment and install binaries
@@ -94,6 +95,17 @@ osdk_install()
   mv $GOPATH/bin/operator-sdk /usr/local/bin/operator-sdk
   cd ~
 }
+
+case "$1" in
+  "") ;;
+  git_config) "$@"; exit;;
+  go_setup) "$@"; exit;;
+  docker_install) "$@"; exit;;
+  kubectl_install) "$@"; exit;;
+  osdk_install) "$@"; exit;;
+
+  *) echo "Unkown function: $1()"; exit 2;;
+esac
 
 yum_deps
 git_config
