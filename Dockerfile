@@ -1,4 +1,4 @@
 FROM centos/tools
 
-COPY setup /root/
-RUN /root/script.sh
+COPY scripts /root/
+RUN /root/go-dev-env.sh

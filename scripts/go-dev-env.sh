@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/go-dev-env.conf
+. ./go-dev-env.conf
 
 # yum dependencies
 yum_deps()
@@ -96,6 +96,20 @@ osdk_install()
   cd ~
 }
 
+clone_repos()
+{
+  repos=$(echo $github_repos | tr "," "\n")
+  for repo in $repos
+  do
+    cd $GOPATH/src/github.com
+    user=$(echo $repo | cut -d'/' -f1)
+    mkdir -p $user
+    cd $user
+    git clone https://github.com/$repo
+  done
+  cd ~  
+}
+
 case "$1" in
   "") ;;
   git_config) "$@"; exit;;
@@ -103,6 +117,7 @@ case "$1" in
   docker_install) "$@"; exit;;
   kubectl_install) "$@"; exit;;
   osdk_install) "$@"; exit;;
+  clone_repos) "$@"; exit;;
 
   *) echo "Unkown function: $1()"; exit 2;;
 esac
@@ -115,4 +130,5 @@ go_vim
 docker_install
 kubectl_install
 osdk_install
+clone_repos
 bashrc_update

@@ -18,7 +18,7 @@ Go development environment provided in a `centos/tools` container:
 Just Docker
 
 ## Setup
-* Edit [setup/go-dev-env.conf](https://github.com/nolancon/go-dev-env/blob/master/setup/go-dev-env.conf) with desired parameters. 
+* Edit [scripts/go-dev-env.conf](https://github.com/nolancon/go-dev-env/blob/master/scripts/go-dev-env.conf) with desired parameters. 
 
   **IMPORTANT**: Set correct git credentials
 * Build image locally: `make image`
