@@ -21,5 +21,7 @@ kubectl:
 osdk:		
 		scripts/go-dev-env.sh osdk_install
 
+repos:
+		scripts/go-dev-env.sh clone_repos	
 
 all: 	build deploy 
