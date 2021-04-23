@@ -1,7 +1,7 @@
 .PHONY: deploy build all
 
 deploy:	
-		sh scripts/deploy.sh
+		sh scripts/deploy-docker.sh
 
 local:
 		mkdir -p ~/.go-dev-env
@@ -9,8 +9,11 @@ local:
 				~/.go-dev-env/local.sh
 				
 
-build:  
-		docker build -t nolancon/go-dev-env:latest .
+build-docker:  
+		docker build -f Dockerfile -t nolancon/go-dev-env:latest .
+
+build-ignite:
+		docker build -f Dockerfile.ignite -t nolancon/ignite-go-dev-env:latest .
 
 git:
 		scripts/go-dev-env.sh git_config
@@ -30,4 +33,4 @@ osdk:
 repos:
 		scripts/go-dev-env.sh clone_repos	
 
-all: 	build deploy 
+all: 	build-docker deploy-docker 

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./go-dev-env.sh
-./clis.sh
+/root/.go-dev-env/go-dev-env.sh
+/root/.go-dev-env/clis.sh
