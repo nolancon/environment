@@ -3,6 +3,12 @@
 deploy:	
 		sh scripts/deploy.sh
 
+local:
+		mkdir ~/.go-dev-env
+			cp scripts/* ~/.go-dev-env/
+				~/.go-dev-env/go-dev-env.sh
+				
+
 build:  
 		docker build -t nolancon/go-dev-env:latest .
 
