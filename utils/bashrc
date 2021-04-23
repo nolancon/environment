@@ -118,7 +118,7 @@ fi
 
 # export variables
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/local:/usr/bin
-export GOPATH="$HOME/go_projects"
+export GOPATH="/root/go_projects"
 export GOBIN="$GOPATH/bin"
 
 # alias extras

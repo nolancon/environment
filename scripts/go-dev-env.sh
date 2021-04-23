@@ -67,21 +67,6 @@ bashrc_update()
   source ~/.bashrc
 }
 
-# install docker cli only - to be connected to host docker daemon
-docker_install()
-{	
-  curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz
-  tar xzvf docker-${docker_version}.tgz --strip 1 -C /usr/local/bin docker/docker
-  rm docker-${docker_version}.tgz  
-}
-
-kubectl_install()
-{
-  curl -LO https://storage.googleapis.com/kubernetes-release/release/v$kubectl_version/bin/linux/amd64/kubectl
-  chmod +x ./kubectl
-  mv ./kubectl /usr/local/bin/kubectl
-}
-
 osdk_install()
 {
   osdk_version="v$operator_sdk_version"	
@@ -114,8 +99,6 @@ case "$1" in
   "") ;;
   git_config) "$@"; exit;;
   go_setup) "$@"; exit;;
-  docker_install) "$@"; exit;;
-  kubectl_install) "$@"; exit;;
   osdk_install) "$@"; exit;;
   clone_repos) "$@"; exit;;
 
@@ -127,8 +110,6 @@ git_config
 go_setup
 vim_update
 go_vim
-docker_install
-kubectl_install
 osdk_install
 clone_repos
 bashrc_update
