@@ -38,7 +38,7 @@ Run script locally to configure environment. This should be used on the host mac
 Note the image is >4GB so 6GB micro VM is created to facilitate 
 
 ```
-ignite create nolancon/ignite-go-dev-env \
+ignite run nolancon/ignite-go-dev-env \
   --name my-vm \
   --cpus 2 \
   --memory 1GB \
