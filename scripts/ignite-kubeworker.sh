@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# install kubernetes
 yum install -y git gcc numactl
 
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -32,16 +33,24 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 
 # install iptables v1.4.21
+yum install -y make kernel-devel autoconf automake libtool
 mkdir -p ~/git-tmp
+cd ~/git-tmp
 git clone git://git.netfilter.org/iptables.git
-git checkout v1.4.21
 cd iptables
+git checkout v1.4.21
 ./autogen.sh
 
-yum install -y make kernel-devel autoconf automake libtool
-
 ./configure --prefix=/usr --sbindir=/sbin --disable-nftables --enable-libipq --with-xtlibdir=/lib/xtables --disable-dependency-tracking
-
 make
-
 make install
+cd ~
+
+# install docker
+yum install -y yum-utils
+
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install -y docker-ce docker-ce-cli containerd.io
