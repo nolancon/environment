@@ -29,3 +29,19 @@ echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
 sysctl --system
 
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+
+# install iptables v1.4.21
+mkdir -p ~/git-tmp
+git clone git://git.netfilter.org/iptables.git
+git checkout v1.4.21
+cd iptables
+./autogen.sh
+
+yum install -y make kernel-devel autoconf automake libtool
+
+./configure --prefix=/usr --sbindir=/sbin --disable-nftables --enable-libipq --with-xtlibdir=/lib/xtables --disable-dependency-tracking
+
+make
+
+make install
