@@ -1,14 +1,6 @@
 #!/bin/bash
 
-yum install -y yum-utils wget
-
-/root/.go-dev-env/go-dev-env.sh go_setup
-
-yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-
-yum install -y docker-ce docker-ce-cli containerd.io
+yum install -y git gcc numactl
 
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]

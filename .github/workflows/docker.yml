@@ -24,13 +24,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push ignite kubemaster
-        id: docker_build_ignite_kubemaster
+        name: Build and push ignite kubeworker
+        id: docker_build_ignite_kubeworker
         uses: docker/build-push-action@v2
         with:
-          file: Dockerfile.ignite-kubemaster
+          file: Dockerfile.ignite-kubeworker
           push: true
-          tags: nolancon/ignite-kubemaster:latest
+          tags: nolancon/ignite-kubeworker:latest
       -
         name: Build and push
         id: docker_build
