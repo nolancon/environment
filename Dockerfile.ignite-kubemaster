@@ -1,0 +1,4 @@
+FROM weaveworks/ignite-centos
+
+COPY scripts /root/.go-dev-env
+RUN /root/.go-dev-env/ignite-kubemaster.sh
