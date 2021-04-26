@@ -30,7 +30,7 @@ jobs:
         with:
           file: Dockerfile.ignite-kubeworker
           push: true
-          tags: nolancon/ignite-kubeworker:latest
+          tags: nolancon/ignite-kubeworker:test
       -
         name: Build and push
         id: docker_build
