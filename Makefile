@@ -1,5 +1,7 @@
 .PHONY: deploy build all
 
+HOME=${/root}
+
 deploy:	
 		sh scripts/deploy-docker.sh
 

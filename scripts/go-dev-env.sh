@@ -64,7 +64,7 @@ bashrc_update()
 {
   wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/bashrc -O ~/bashrc
   yes | mv ~/bashrc ~/.bashrc
-  source ~/.bashrc
+  sudo source ~/.bashrc
 }
 
 osdk_install()
