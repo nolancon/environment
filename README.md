@@ -2,7 +2,7 @@
 ![build](https://github.com/nolancon/go-dev-env/actions/workflows/static-analysis.yml/badge.svg)
 
 # Go Development Environment 🚀
-Go development environment configured on host, in a `centos/tools` container or in an `weaveworks/ignite-centos` MicroVM image.
+Go development environment configured on host, in a `centos/tools` container or in a `weaveworks/ignite-centos` MicroVM image.
 
 ## Setup
 Edit `[scripts/go-dev-env.conf](https://github.com/nolancon/go-dev-env/blob/master/scripts/go-dev-env.conf)` with desired parameters before executing any of the options below. 
