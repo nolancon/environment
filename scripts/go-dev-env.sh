@@ -56,7 +56,8 @@ go_vim()
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   rm -rf ~/.vimrc
   wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/vimrc -O ~/.vimrc
-  vi +PluginUpdate +PluginInstall +GoInstallBinaries +qall
+  vi +PluginUpdate +PluginInstall +qall
+  vi +GoInstallBinaries +qall
 }
 
 # add bashrc file located in repo
