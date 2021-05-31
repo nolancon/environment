@@ -37,6 +37,7 @@ Plugin 'stamblerre/gocode', {'rtp': 'vim/'}
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+set autowrite
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -68,4 +69,3 @@ let g:rehash256 = 1
 "let g:molokai_original = 1
 set backspace=indent,eol,start
 set number
-
