@@ -90,7 +90,7 @@ esac
 apt_deps
 git_config
 go_setup
+bashrc_update
 go_vim
 osdk_install
 clone_repos
-bashrc_update
