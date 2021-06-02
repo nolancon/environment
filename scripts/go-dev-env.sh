@@ -65,6 +65,7 @@ osdk_install()
 
 clone_repos()
 {
+  mkdir -p $GOPATH/src/github.com		
   repos=$(echo $github_repos | tr "," "\n")
   for repo in $repos
   do
@@ -92,5 +93,5 @@ git_config
 go_setup
 bashrc_update
 go_vim
-osdk_install
 clone_repos
+osdk_install
