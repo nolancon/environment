@@ -2,12 +2,11 @@
 
 . ~/.go-dev-env/go-dev-env.conf
 
-# yum dependencies
-yum_deps()
+# apt dependencies
+apt_deps()
 {
-  yum update -y
-  yum install -y git wget make gcc glibc-devel dnf-plugins-core yum-utils curl
-  yum config-manager -y --set-enabled powertools
+  apt update -y
+  apt install -y git wget make curl
 }
 
 # add git user and email configuration
@@ -30,24 +29,6 @@ go_setup()
   export GOBIN="/root/go_projects/bin"
 }
 
-# update vim to version compatible with vundle and vim-go
-vim_update()
-{
-  vimversion="v$vim_version"	
-  cd $GOPATH/src
-  mkdir -p github.com/vim
-  cd github.com/vim
-  git clone --branch ${vimversion} https://github.com/vim/vim.git
-  yum-builddep -y vim 
-  cd vim
-  ./configure
-  make
-  make install
-  yes | cp -f /usr/bin/vi /root/old_vi
-  yes | cp -f /usr/local/bin/vim /usr/bin/vi 
-  cd ~
-}
-
 # add vim-go plugin via vundle
 # add vimrc file from repo
 go_vim()
@@ -56,8 +37,8 @@ go_vim()
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   rm -rf ~/.vimrc
   wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/vimrc -O ~/.vimrc
-#  vi +PluginUpdate +PluginInstall +qall
-#  vi +GoInstallBinaries +qall
+  vi +PluginUpdate +PluginInstall +qall
+  vi +GoInstallBinaries +qall
 }
 
 # add bashrc file located in repo
@@ -66,8 +47,6 @@ bashrc_update()
   wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/bashrc -O ~/bashrc
   yes | mv ~/bashrc ~/.bashrc
   sudo source ~/.bashrc
-  # also install all vim plugins/binaries
-  vim +PluginUpdate +PluginInstall +GoInstallBinaries +qall
 }
 
 osdk_install()
@@ -108,10 +87,9 @@ case "$1" in
   *) echo "Unkown function: $1()"; exit 2;;
 esac
 
-yum_deps
+apt_deps
 git_config
 go_setup
-vim_update
 go_vim
 osdk_install
 clone_repos

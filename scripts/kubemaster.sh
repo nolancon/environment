@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: Update this script for Ubuntu - this is the CentOS version!
+
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
