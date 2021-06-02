@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/.go-dev-env/go-dev-env.conf
+. /root/.go-dev-env/go-dev-env.conf
 
 # apt dependencies
 apt_deps()
@@ -33,10 +33,10 @@ go_setup()
 # add vimrc file from repo
 go_vim()
 {
-  rm -rf ~/.vim/bundle/Vundle.vim
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  rm -rf ~/.vimrc
-  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/vimrc -O ~/.vimrc
+  rm -rf /root/.vim/bundle/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
+  rm -rf /root/.vimrc
+  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/vimrc -O /root/.vimrc
   vi +PluginUpdate +PluginInstall +qall
   vi +GoInstallBinaries +qall
 }
@@ -44,9 +44,9 @@ go_vim()
 # add bashrc file located in repo
 bashrc_update()
 {
-  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/bashrc -O ~/bashrc
-  yes | mv ~/bashrc ~/.bashrc
-  sudo source ~/.bashrc
+  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/bashrc -O /root/bashrc
+  yes | mv /root/bashrc /root/.bashrc
+  sudo source /root/.bashrc
 }
 
 osdk_install()
@@ -60,7 +60,7 @@ osdk_install()
   git checkout ${osdk_version}
   make install
   mv $GOPATH/bin/operator-sdk /usr/local/bin/operator-sdk
-  cd ~
+  cd /root
 }
 
 clone_repos()
@@ -74,7 +74,7 @@ clone_repos()
     cd $user
     git clone https://github.com/$repo
   done
-  cd ~  
+  cd /root  
 }
 
 case "$1" in
