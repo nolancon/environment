@@ -2,7 +2,7 @@
 ![build](https://github.com/nolancon/go-dev-env/actions/workflows/static-analysis.yml/badge.svg)
 
 # Go Development Environment 🚀
-Go development environment configured on host, in a `centos/tools` container or in a `weaveworks/ignite-centos` MicroVM image.
+Go development environment configured on host, in a `ubuntu` container or in a `weaveworks/ignite-ubuntu` MicroVM image.
 
 ## Setup
 Edit `[scripts/go-dev-env.conf](https://github.com/nolancon/go-dev-env/blob/master/scripts/go-dev-env.conf)` with desired parameters before executing any of the options below. 
@@ -27,8 +27,8 @@ Run `make local` to configure your environment with the following (suitable for 
 
 ## Docker Container 🧰 or Ignite MicroVM 🔥
 
-Run `make build-docker` to build a `centos/tools` docker image with the following:
-Run `make build-docker` to build a `weaveworks/ignite-centos` MicroVM image with the following:
+Run `make build-docker` to build a `ubuntu` docker image with the following:
+Run `make build-docker` to build a `weaveworks/ignite-ubuntu` MicroVM image with the following:
 
 * `go` environment configured with desired version
 * `git` configured with user credentials
