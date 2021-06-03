@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # export variables
+export HOME="/root"
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/local:/usr/bin
 export GOPATH="/root/go_projects"
 export GOBIN="$GOPATH/bin"
@@ -124,3 +125,5 @@ export GOBIN="$GOPATH/bin"
 # alias extras
 alias k='kubectl'
 alias gh='cd $GOPATH/src/github.com'
+alias sto='cd $GOPATH/src/code.storageos.net'
+alias kc='$GOPATH/src/code.storageos.net/pre/kubecover/envsetup/bin/kubectl'
