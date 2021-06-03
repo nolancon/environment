@@ -6,7 +6,7 @@
 apt_deps()
 {
   apt update -y
-  apt install -y git wget make curl
+  apt install -y git wget make curl gcc libdevmapper-dev pkg-config
 }
 
 # add git user and email configuration
