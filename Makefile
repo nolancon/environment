@@ -23,10 +23,10 @@ go:
 		scripts/go-dev-env.sh go_setup
 
 docker:		
-		scripts/cli.sh docker_install
+		scripts/clis.sh docker_install
 
 kubectl:	
-		scripts/cli.sh kubectl_install
+		scripts/clis.sh kubectl_install
 
 osdk:		
 		scripts/go-dev-env.sh osdk_install
