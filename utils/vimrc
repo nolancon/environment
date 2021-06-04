@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'fatih/vim-go'
-"Plugin 'zacanger/angr.vim'
+Plugin 'zacanger/angr.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -28,7 +28,7 @@ set autowrite
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"colorscheme angr
+colorscheme angr
 syntax on
 
 syntax enable
