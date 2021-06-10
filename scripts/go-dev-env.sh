@@ -63,7 +63,8 @@ osdk_install()
 
 clone_repos()
 {
-  mkdir -p $GOPATH/src/github.com		
+  mkdir -p $GOPATH/src/github.com
+  mkdir -p $GOPATH/src/code.storageos.net
   repos=$(echo $github_repos | tr "," "\n")
   for repo in $repos
   do
@@ -92,4 +93,4 @@ go_setup
 bashrc_update
 go_vim
 clone_repos
-osdk_install
+#osdk_install
