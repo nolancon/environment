@@ -61,6 +61,12 @@ osdk_install()
   cd /root
 }
 
+kind_install()
+{
+  curl -Lo /usr/local/bin/kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-darwin-amd64
+  chmod +x /usr/local/bin/kind
+}
+
 clone_repos()
 {
   mkdir -p $GOPATH/src/github.com
@@ -92,5 +98,6 @@ git_config
 go_setup
 bashrc_update
 go_vim
+kind_install
 clone_repos
 #osdk_install
