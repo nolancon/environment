@@ -63,7 +63,7 @@ osdk_install()
 
 kind_install()
 {
-  curl -Lo /usr/local/bin/kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-darwin-amd64
+  curl -Lo /usr/local/bin/kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-linux-amd64
   chmod +x /usr/local/bin/kind
 }
 
