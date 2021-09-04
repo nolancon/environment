@@ -29,6 +29,24 @@ go_setup()
   export GOBIN="/root/go_projects/bin"
 }
 
+# install desired vim version (via go-dev-env.conf)
+vim_update()
+{
+  vimversion="v$vim_version"	
+  cd $GOPATH/src
+  mkdir -p github.com/vim
+  cd github.com/vim
+  git clone --branch ${vimversion} https://github.com/vim/vim.git
+  yum-builddep -y vim 
+  cd vim
+  ./configure
+  make
+  make install
+  yes | cp -f /usr/bin/vi /root/old_vi
+  yes | cp -f /usr/local/bin/vim /usr/bin/vi
+  cd ~
+}
+
 # add vim-go plugin via vundle
 # add vimrc file from repo
 go_vim()
@@ -109,6 +127,7 @@ apt_deps
 git_config
 go_setup
 bashrc_update
+vim_update
 go_vim
 kind_install
 krew_install
