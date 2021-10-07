@@ -123,8 +123,16 @@ export GOPATH="/root/go_projects"
 export GOBIN="$GOPATH/bin"
 
 # alias extras
-alias k='kubectl'
+alias k='kubectl --kubeconfig=/root/.kube/config'
 alias gh='cd $GOPATH/src/github.com'
 alias sto='cd $GOPATH/src/code.storageos.net'
 alias kc='$GOPATH/src/code.storageos.net/pre/kubecover/envsetup/bin/kubectl'
-alias ks='cd $GOPATH/src/github.com/storageos/kubectl-storageos'
+alias ks='cd $GOPATH/src/github.com/nolancon/kubectl-storageos'
+alias et='cd $GOPATH/src/github.com/storageos/etcd-cluster-operator'
+alias pl='cd $GOPATH/src/github.com/nolancon/placeholder'
+alias kdo='kubectl --kubeconfig=/root/conor-k8s-cluster-kubeconfig.yaml'
+alias pm='cd $GOPATH/src/github.com/storageos/portal-manager'
+
+# krew path
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+. "$HOME/.cargo/env"
