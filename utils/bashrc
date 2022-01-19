@@ -121,8 +121,11 @@ export HOME="/root"
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/local:/usr/bin:${KREW_ROOT:-$HOME/.krew}/bin
 export GOPATH="/root/go_projects"
 export GOBIN="$GOPATH/bin"
+export S="storageos"
+export SE="storageos-etcd"
 
 # alias extras
+#alias k='kubectl --kubeconfig=/root/.kube/config'
 alias k='kubectl --kubeconfig=/root/.kube/config'
 alias gh='cd $GOPATH/src/github.com'
 alias sto='cd $GOPATH/src/code.storageos.net'
@@ -130,8 +133,13 @@ alias kc='$GOPATH/src/code.storageos.net/pre/kubecover/envsetup/bin/kubectl'
 alias ks='cd $GOPATH/src/github.com/nolancon/kubectl-storageos'
 alias et='cd $GOPATH/src/github.com/storageos/etcd-cluster-operator'
 alias pl='cd $GOPATH/src/github.com/nolancon/placeholder'
-alias kdo='kubectl --kubeconfig=/root/conor-k8s-cluster-kubeconfig.yaml'
 alias pm='cd $GOPATH/src/github.com/storageos/portal-manager'
+alias nm='cd $GOPATH/src/github.com/storageos/node-manager'
+alias ug='cd $GOPATH/src/github.com/storageos/upgrade-guard'
+alias op='cd $GOPATH/src/github.com/nolancon/operator'
+alias ap='cd $GOPATH/src/github.com/nolancon/api-manager'
+alias di='docker images'
+
 
 # krew path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
