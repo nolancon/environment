@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'fatih/vim-go'
 Plugin 'preservim/nerdtree'
+Plugin 'stephpy/vim-yaml'
 "Plugin 'zacanger/angr.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,7 +37,7 @@ syntax enable
 "set background=dark
 "colorscheme solarized
 "colorscheme angr
-
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "syntax on
 "colorscheme gitgo
 let g:go_def_mode='gopls'
@@ -47,6 +48,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_auto_sameids = 1
 let g:rehash256 = 1
+let g:indentLine_char = '⦙'
 "let g:molokai_original = 1
 set backspace=indent,eol,start
 set number
