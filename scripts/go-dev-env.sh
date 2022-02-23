@@ -96,6 +96,12 @@ krew_install()
   "$KREW" install krew
 }
 
+kuttl_install()
+{
+  curl -Lo /usr/local/bin/kubectl-kuttl https://github.com/kudobuilder/kuttl/releases/download/v0.11.1/kubectl-kuttl_0.11.1_linux_x86_64
+  chmod +x /usr/local/bin/kubectl-kuttl
+}
+
 clone_repos()
 {
   mkdir -p $GOPATH/src/github.com
@@ -120,7 +126,7 @@ case "$1" in
   clone_repos) "$@"; exit;;
   krew_install) "$@"; exit;;
 
-  *) echo "Unkown function: $1()"; exit 2;;
+  *) echo "Unknown function: $1()"; exit 2;;
 esac
 
 apt_deps
@@ -131,5 +137,6 @@ vim_update
 go_vim
 kind_install
 krew_install
+kuttl_install
 clone_repos
 #osdk_install
