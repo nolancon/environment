@@ -5,7 +5,7 @@ deploy:
 		sh scripts/deploy-docker.sh
 
 local:
-		mkdir -p /root/.go-dev-env
+		mkdir -p /~/.go-dev-env
 			cp scripts/* /root/.go-dev-env/
 				/root/.go-dev-env/local.sh
 				

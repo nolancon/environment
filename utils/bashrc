@@ -117,9 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 # export variables
-export HOME="/root"
+export HOME="/home/nolancon"
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/local:/usr/bin:${KREW_ROOT:-$HOME/.krew}/bin
-export GOPATH="/root/go_projects"
+export GOPATH="/home/nolancon/go_projects"
 export GOBIN="$GOPATH/bin"
 export S="storageos"
 export SE="storageos-etcd"

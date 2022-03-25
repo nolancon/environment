@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /root/go_projects/src/github.com/
+cd /home/nolancon/go_projects/src/github.com/
 mkdir -p firecracker-microvm
 git clone https://github.com/firecracker-microvm/firecracker
 cd firecracker

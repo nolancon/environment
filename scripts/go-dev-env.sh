@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. /root/.go-dev-env/go-dev-env.conf
+. /home/nolancon/.go-dev-env/go-dev-env.conf
 
 # apt dependencies
 apt_deps()
@@ -23,10 +23,10 @@ go_setup()
   gover=$go_version	 
   wget -c https://golang.org/dl/go${gover}.linux-amd64.tar.gz
   tar -C /usr/local -xvzf go${gover}.linux-amd64.tar.gz
-  mkdir -p /root/go_projects/{bin,src,pkg}
+  mkdir -p /home/nolancon/go_projects/{bin,src,pkg}
   export PATH="$PATH:/usr/local/go/bin"
-  export GOPATH="/root/go_projects"
-  export GOBIN="/root/go_projects/bin"
+  export GOPATH="/home/nolancon/go_projects"
+  export GOBIN="/home/nolancon/go_projects/bin"
 }
 
 # install desired vim version (via go-dev-env.conf)
@@ -42,7 +42,7 @@ vim_update()
   ./configure
   make
   make install
-  yes | cp -f /usr/bin/vi /root/old_vi
+  yes | cp -f /usr/bin/vi /home/nolancon/old_vi
   yes | cp -f /usr/local/bin/vim /usr/bin/vi
   cd ~
 }
@@ -51,18 +51,18 @@ vim_update()
 # add vimrc file from repo
 go_vim()
 {
-  rm -rf /root/.vim/bundle/Vundle.vim
-  git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
-  rm -rf /root/.vimrc
-  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/vimrc -O /root/.vimrc
+  rm -rf /home/nolancon/.vim/bundle/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git /home/nolancon/.vim/bundle/Vundle.vim
+  rm -rf /home/nolancon/.vimrc
+  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/vimrc -O /home/nolancon/.vimrc
 }
 
 # add bashrc file located in repo
 bashrc_update()
 {
-  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/bashrc -O /root/bashrc
-  yes | mv /root/bashrc /root/.bashrc
-  sudo source /root/.bashrc
+  wget -c https://raw.githubusercontent.com/nolancon/go-dev-env/master/utils/bashrc -O /home/nolancon/bashrc
+  yes | mv /home/nolancon/bashrc /home/nolancon/.bashrc
+  sudo source /home/nolancon/.bashrc
 }
 
 osdk_install()
@@ -76,7 +76,7 @@ osdk_install()
   git checkout ${osdk_version}
   make install
   mv $GOPATH/bin/operator-sdk /usr/local/bin/operator-sdk
-  cd /root
+  cd /home/nolancon
 }
 
 kind_install()
@@ -115,7 +115,7 @@ clone_repos()
     cd $user
     git clone https://github.com/$repo
   done
-  cd /root  
+  cd /home/nolancon  
 }
 
 case "$1" in
