@@ -129,16 +129,18 @@ export SE="storageos-etcd"
 alias k='kubectl --kubeconfig=/root/.kube/config'
 alias gh='cd $GOPATH/src/github.com'
 alias sto='cd $GOPATH/src/code.storageos.net'
-alias kc='$GOPATH/src/code.storageos.net/pre/kubecover/envsetup/bin/kubectl'
-alias ks='cd $GOPATH/src/github.com/nolancon/kubectl-storageos'
+alias kc='cd $GOPATH/src/github.com/ondat/kubecover'
+alias ks='cd $GOPATH/src/github.com/storageos/kubectl-storageos'
 alias et='cd $GOPATH/src/github.com/storageos/etcd-cluster-operator'
 alias pl='cd $GOPATH/src/github.com/nolancon/placeholder'
 alias pm='cd $GOPATH/src/github.com/storageos/portal-manager'
 alias nm='cd $GOPATH/src/github.com/storageos/node-manager'
 alias ug='cd $GOPATH/src/github.com/storageos/upgrade-guard'
-alias op='cd $GOPATH/src/github.com/nolancon/operator'
-alias ap='cd $GOPATH/src/github.com/nolancon/api-manager'
+alias op='cd $GOPATH/src/github.com/storageos/operator'
+alias ap='cd $GOPATH/src/github.com/storageos/api-manager'
 alias di='docker images'
+alias t2='cd $GOPATH/src/github.com/storageos/t2'
+alias c2='cd $GOPATH/src/github.com/ondat/c2'
 
 
 # krew path
