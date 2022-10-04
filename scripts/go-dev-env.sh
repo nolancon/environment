@@ -81,7 +81,7 @@ osdk_install()
 
 kind_install()
 {
-  curl -Lo /usr/local/bin/kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-linux-amd64
+  curl -Lo /usr/local/bin/kind https://kind.sigs.k8s.io/dl/v${kind_version}/kind-linux-amd64
   chmod +x /usr/local/bin/kind
 }
 
@@ -98,7 +98,7 @@ krew_install()
 
 kuttl_install()
 {
-  curl -Lo /usr/local/bin/kubectl-kuttl https://github.com/kudobuilder/kuttl/releases/download/v0.11.1/kubectl-kuttl_0.11.1_linux_x86_64
+  curl -Lo /usr/local/bin/kubectl-kuttl https://github.com/kudobuilder/kuttl/releases/download/v${kuttl_version}/kubectl-kuttl_${kuttl_version}_linux_x86_64
   chmod +x /usr/local/bin/kubectl-kuttl
 }
 
@@ -125,6 +125,8 @@ case "$1" in
   osdk_install) "$@"; exit;;
   clone_repos) "$@"; exit;;
   krew_install) "$@"; exit;;
+  kuttl_install) "$@"; exit;;
+  kind_install) "$@"; exit;;
 
   *) echo "Unknown function: $1()"; exit 2;;
 esac

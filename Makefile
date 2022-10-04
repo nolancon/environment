@@ -35,6 +35,13 @@ repos:
 		scripts/go-dev-env.sh clone_repos	
 
 krew:
-		scripts/go-dev-env.sh krew_install	
+		scripts/go-dev-env.sh krew_install
+
+kuttl:
+		scripts/go-dev-env.sh kuttl_install
+
+kind:
+		scripts/go-dev-env.sh kind_install
+
 
 all: 	build-docker deploy-docker 
