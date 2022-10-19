@@ -53,4 +53,5 @@ let g:indentLine_char = '⦙'
 set backspace=indent,eol,start
 set number
 nmap <F6> :NERDTreeToggle<CR>
+nnoremap <C-a> :GoImplements<CR>
 "au filetype go inoremap <buffer> . .<C-x><C-o>
