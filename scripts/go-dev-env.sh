@@ -6,7 +6,7 @@
 apt_deps()
 {
   apt update -y
-  apt install -y git wget make curl gcc libdevmapper-dev pkg-config
+  apt install -y git wget make curl gcc libdevmapper-dev pkg-config libbtrfs-dev
 }
 
 # add git user and email configuration
