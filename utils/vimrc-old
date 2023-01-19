@@ -1,0 +1,57 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'fatih/vim-go'
+Plugin 'preservim/nerdtree'
+Plugin 'stephpy/vim-yaml'
+"Plugin 'zacanger/angr.vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on    " required
+set autowrite
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"colorscheme angr
+syntax on
+
+syntax enable
+"set background=dark
+"colorscheme solarized
+"colorscheme angr
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+"syntax on
+"colorscheme gitgo
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_auto_sameids = 1
+let g:rehash256 = 1
+let g:indentLine_char = '⦙'
+"let g:molokai_original = 1
+set backspace=indent,eol,start
+set number
+nmap <F6> :NERDTreeToggle<CR>
+nnoremap <C-a> :GoImplements<CR>
+"au filetype go inoremap <buffer> . .<C-x><C-o>
