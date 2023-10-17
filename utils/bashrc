@@ -117,16 +117,14 @@ if ! shopt -oq posix; then
 fi
 
 # export variables
-export HOME="/root"
+export HOME="/home/cnolan"
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/local:/usr/bin:${KREW_ROOT:-$HOME/.krew}/bin
-export GOPATH="/root/go_projects"
+export GOPATH="/home/cnolan/go_projects"
 export GOBIN="$GOPATH/bin"
-export S="storageos"
-export SE="storageos-etcd"
 
 # alias extras
 #alias k='kubectl --kubeconfig=/root/.kube/config'
-alias k='kubectl --kubeconfig=/root/.kube/config'
+alias k='kubectl --kubeconfig=/home/cnolan/.kube/config'
 alias gh='cd $GOPATH/src/github.com'
 alias sto='cd $GOPATH/src/code.storageos.net'
 alias kc='cd $GOPATH/src/github.com/ondat/kubecover'

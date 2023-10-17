@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. /root/.go-dev-env/go-dev-env.conf
+. /home/cnolan/.go-dev-env/go-dev-env.conf
 
 # install docker cli only - to be connected to host docker daemon
 docker_install()

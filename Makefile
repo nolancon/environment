@@ -5,9 +5,9 @@ deploy:
 		sh scripts/deploy-docker.sh
 
 local:
-		mkdir -p /root/.go-dev-env
-			cp scripts/* /root/.go-dev-env/
-				/root/.go-dev-env/local.sh
+		mkdir -p /home/cnolan/.go-dev-env
+			cp scripts/* /home/cnolan/.go-dev-env/
+				/home/cnolan/.go-dev-env/local.sh
 				
 
 build-docker:  
