@@ -124,24 +124,19 @@ export GOBIN="$GOPATH/bin"
 export S="storageos"
 export SE="storageos-etcd"
 
+export AWS_ACCESS_KEY_ID=Dummy
+export AWS_SECRET_ACCESS_KEY=Dummy
+export AWS_DEFAULT_REGION=us-east-1
+
 # alias extras
-#alias k='kubectl --kubeconfig=/root/.kube/config'
 alias k='kubectl --kubeconfig=/root/.kube/config'
 alias gh='cd $GOPATH/src/github.com'
-alias sto='cd $GOPATH/src/code.storageos.net'
-alias kc='cd $GOPATH/src/github.com/ondat/kubecover'
-alias ks='cd $GOPATH/src/github.com/storageos/kubectl-storageos'
-alias et='cd $GOPATH/src/github.com/storageos/etcd-cluster-operator'
-alias pl='cd $GOPATH/src/github.com/nolancon/placeholder'
-alias pm='cd $GOPATH/src/github.com/storageos/portal-manager'
-alias nm='cd $GOPATH/src/github.com/storageos/node-manager'
-alias ug='cd $GOPATH/src/github.com/storageos/upgrade-guard'
-alias op='cd $GOPATH/src/github.com/storageos/operator'
-alias ap='cd $GOPATH/src/github.com/storageos/api-manager'
-alias di='docker images'
-alias t2='cd $GOPATH/src/github.com/storageos/t2'
-alias c2='cd $GOPATH/src/github.com/ondat/c2'
+alias pc='cd $GOPATH/src/github.com/linode/provider-ceph'
+alias pl='cd $GOPATH/src/github.com/linode/provider-linode'
+alias bi='cd $GOPATH/src/bits.linode.com'
+alias obj='cd $GOPATH/src/bits.linode.com/LinodeAPI/obj-endpoint'
 
+alias di='docker images'
 
 # krew path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
