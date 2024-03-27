@@ -43,5 +43,7 @@ kuttl:
 kind:
 		scripts/go-dev-env.sh kind_install
 
+vim:
+		scripts/go-dev-env.sh vim_update
 
 all: 	build-docker deploy-docker 
