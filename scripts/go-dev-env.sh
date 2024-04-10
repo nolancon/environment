@@ -102,6 +102,16 @@ kuttl_install()
   chmod +x /usr/local/bin/kubectl-kuttl
 }
 
+chainsaw_install()
+{
+  curl -sSL https://github.com/kyverno/chainsaw/releases/download/v${chainsaw_version}/chainsaw_linux_amd64.tar.gz | tar -xz -C /usr/local/bin/
+}
+
+k9s_install()
+{
+  curl -sSL https://github.com/derailed/k9s/releases/download/v${k9s_version}/k9s_Linux_amd64.tar.gz | tar -xz -C /usr/local/bin/
+}
+
 clone_repos()
 {
   mkdir -p $GOPATH/src/github.com
@@ -126,6 +136,8 @@ case "$1" in
   clone_repos) "$@"; exit;;
   krew_install) "$@"; exit;;
   kuttl_install) "$@"; exit;;
+  chainsaw_install) "$@"; exit;;
+  k9s_install) "$@"; exit;;
   kind_install) "$@"; exit;;
 
   *) echo "Unknown function: $1()"; exit 2;;

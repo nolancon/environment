@@ -40,6 +40,12 @@ krew:
 kuttl:
 		scripts/go-dev-env.sh kuttl_install
 
+chainsaw:
+		scripts/go-dev-env.sh chainsaw_install
+
+k9s:
+		scripts/go-dev-env.sh k9s_install
+
 kind:
 		scripts/go-dev-env.sh kind_install
 
